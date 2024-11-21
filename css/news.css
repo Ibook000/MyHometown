@@ -1,0 +1,34 @@
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 创建两列，每列占据可用空间的一半 */
+    gap: 16px; /* 设置列与列之间的间隔 */
+}
+  
+.new {
+    border: 1px solid #ddd; /* 边框，可以根据需要调整 */
+    padding: 10px; /* 内边距，可以根据需要调整 */
+    display: flex;
+    flex-direction: column; /* 使内容垂直排列 */
+    align-items: center; /* 使内容在水平方向上居中 */
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    transition: all 0.3s ease; /* 添加过渡效果 */
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.new img {
+    width: 100%; /* 图片最大宽度为容器宽度 */
+    height: auto; /* 图片高度自动调整 */
+    border-radius: 20px;
+
+}
+
+.new h3 {
+    font-size: 34px; /* 增大标题字体大小 */
+    margin: 8px 0; /* 增加标题和内容之间的间距 */
+    text-align: center; /* 标题居中 */
+}
+
+.new p {
+    text-align: center; /* 段落文本居中 */
+}

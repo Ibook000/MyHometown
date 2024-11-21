@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航栏 -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#index-container">首页管理</a></li>
+                <li><a href="#cityIntro-container">介绍管理</a></li>
+                <li><a href="#scenery-container">风景管理</a></li>
+                <li><a href="#food-container">美食管理</a></li>
+                <li><a href="#news-container">新闻管理</a></li>
+                <li><a href="#comment-container">留言管理</a></li>
+                <li><a href="#user-container">用户管理</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <!--首页管理-->
+            <div id="index-container" class="content-section">
+                <h2>首页管理</h2>
+                <!--轮播图&风景图上传-->
+                <form id="imageUploadForm">
+                    <h4>轮播图&风景图上传</h4>
+                    <!-- 选择图片类型 -->
+                    <label for="imageType">选择图片类型：</label>
+                    <select id="imageType" name="q">
+                        <option value="main">首页风景图</option>
+                        <option value="slideshow">轮播图</option>
+                    </select>
+                    <br><br>
+            
+                    <!-- 选择图片 -->
+                    <label for="fileInput">选择图片：</label>
+                    <input type="file" class="fileInput" name="files" id="fileInput" accept="image/*" multiple />
+                    <br><br>
+            
+                    <!-- 提交按钮 -->
+                    <button type="submit">上传图片</button>
+                </form>
+                <!-- 介绍&新闻上传 -->
+                <form id="textUploadForm">
+                    <h4>介绍&新闻上传</h4>
+
+                    <!-- 介绍内容 -->
+                    <label for="intro">南安市介绍：</label><br>
+                    <textarea id="intro" name="Intro" rows="10" cols="50"></textarea>
+                    <br><br>
+
+                    <!-- 新闻内容 -->
+                    <label for="news">新闻内容：</label><br>
+                    <textarea id="news" name="News" rows="10" cols="50"></textarea>
+                    <br><br>
+
+                    <button type="submit">提交</button>
+                </form>        
+            </div>
+            <!--介绍管理-->
+            <div id="cityIntro-container" class="content-section">
+                <h2>介绍管理</h2>
+                <!-- 介绍上传 -->
+                <form id="introUploadForm">
+                    <h4>介绍上传</h4>
+                    <div class="introUpload-item">
+                        <label for="flower">花：</label><br>
+                        <textarea id="flower" name="flower" rows="10" cols="50"></textarea>    
+                    </div>
+                    <div class="introUpload-item">
+                        <label for="tree">树：</label><br>
+                        <textarea id="tree" name="tree" rows="10" cols="50"></textarea>
+                    </div>
+                    <div class="introUpload-item">
+                        <label for="name_origin">名字由来：</label><br>
+                        <textarea id="name_origin" name="name_origin" rows="10" cols="50"></textarea>
+                    </div>
+                    <div class="introUpload-item">
+                        <label for="natural_resource">自然资源：</label><br>
+                        <textarea id="natural_resource" name="natural_resource" rows="10" cols="50"></textarea>
+                    </div>
+                    <div class="introUpload-item">
+                        <label for="geographical_environment">地理环境：</label><br>
+                        <textarea id="geographical_environment" name="geographical_environment" rows="10" cols="50"></textarea>
+                    </div>
+                    <div class="introUpload-item">
+                        <label for="historical_evolution">历史演化：</label><br>
+                        <textarea id="historical_evolution" name="historical_evolution" rows="10" cols="50"></textarea>
+                    </div>
+                    <div class="introUpload-item">
+                        <label for="population_ethnicity">人口民族：</label><br>
+                        <textarea id="population_ethnicity" name="population_ethnicity" rows="10" cols="50"></textarea>
+                    </div>
+                    <div class="introUpload-item">
+                        <label for="administrative_division">行政区域：</label><br>
+                        <textarea id="administrative_division" name="administrative_division" rows="10" cols="50"></textarea>
+                    </div>
+                    <button type="submit">提交</button>
+                </form>        
+            </div>
+            <!--风景管理-->
+            <div id="scenery-container" class="content-section">
+                <h2>风景管理</h2>
+                <!--风景图片上传-->
+                <form id="sceneryUploadForm">
+                    <h4>风景图片上传</h4>
+                    <!-- 风景名称 -->
+                    <label for="sceneryName">风景名称：</label><br>
+                    <input type="text" id="sceneryName" name="name" required>
+                    <br><br>
+                    <!-- 风景简介 -->
+                    <label for="sceneryIntro">风景简介：</label><br>
+                    <textarea id="sceneryIntro" name="intro" rows="4" cols="50" required></textarea>
+                    <br><br>
+                
+                    <!-- 风景图片 -->
+                    <label for="sceneryImage">风景图片：</label><br>
+                    <input type="file" class="fileInput" id="sceneryImage" name="file" accept="image/*" required>
+                    <br><br>
+                    <button type="submit">上传</button>
+                </form>
+                <!--风景图片删除-->
+                <form id="sceneryDeleteForm">
+                    <h4>风景图片删除</h4>
+                    <!-- 风景名称 -->
+                    <label for="sceneryName">风景名称：</label><br>
+                    <input type="text" id="SceneryNameDelete" name="name" required>
+                    <br><br>
+                    <button type="submit">删除</button>
+                </form>
+            </div>
+            <!--美食管理-->
+            <div id="food-container" class="content-section">
+                <h2>美食管理</h2>
+                <!--美食图片上传-->
+                <form id="foodUploadForm">
+                    <h4>美食上传</h4>
+                    <!-- 美食名称 -->
+                    <label for="foodName">美食名称：</label><br>
+                    <input type="text" id="foodName" name="name" required>
+                    <br><br>
+                    <!-- 美食简介 -->
+                    <label for="foodIntro">美食简介：</label><br>
+                    <textarea id="foodIntro" name="intro" rows="4" cols="50" required></textarea>
+                    <br><br>
+                
+                    <!-- 美食图片 -->
+                    <label for="fooodImage">美食图片：</label><br>
+                    <input type="file" class="fileInput" id="fooodImage" name="file" accept="image/*" required>
+                    <br><br>
+                    <button type="submit">上传</button>
+                </form>
+                <!--美食删除-->
+                <form id="foodDeleteForm">
+                    <h4>风景图片删除</h4>
+                    <!-- 风景名称 -->
+                    <label for="foodName">美食名称：</label><br>
+                    <input type="text" id="foodNameDelete" required>
+                    <br><br>
+                    <button type="submit">删除</button>
+                </form>
+            </div>
+            <!--新闻管理-->
+            <div id="news-container" class="content-section">
+                <h2>新闻管理</h2>
+                <!--新闻上传-->
+                <form id="newUploadForm">
+                    <h4>美食上传</h4>
+                    <!-- 新闻名称 -->
+                    <label for="newTitle">新闻标题：</label><br>
+                    <input type="text" id="newsTitle" name="name" required>
+                    <br><br>
+                    <!-- 新闻简介 -->
+                    <label for="newIntro">新闻简介：</label><br>
+                    <textarea id="newIntro" name="intro" rows="4" cols="50" required></textarea>
+                    <br><br>
+                    <!-- 新闻图片 -->
+                    <label for="newImage">新闻图片：</label><br>
+                    <input type="file" class="fileInput" id="newImage" name="file" accept="image/*" required>
+                    <br><br>
+                    <button type="submit">上传</button>
+                </form>
+                <!--新闻删除-->
+                <form id="newsDeleteForm">
+                    <h4>新闻删除</h4>
+                    <!-- 新闻名称 -->
+                    <label for="newsName">新闻名称：</label><br>
+                    <input type="text" id="newTitleDelete" name="name" required>
+                    <br><br>
+                    <button type="submit">删除</button>
+                </form>
+            </div>
+            <!--留言管理-->
+            <div id="comment-container" class="content-section">
+                <h2>留言管理</h2>
+                <!--留言上传-->
+                <form id="commentUplodForm">
+                    <h4>留言上传</h4>
+                    <label for="comment_content">留言内容：</label><br>
+                    <textarea id="comment_content" name="content" rows="4" cols="50" required></textarea>
+                    <br><br>
+                    <button type="submit">上传</button>
+                </form>
+                <!--留言删除-->
+                <form id="commentDeleteForm">
+                    <h4>留言删除</h4>
+                    <label for="commentId">留言id：</label><br>
+                    <input id="commentId" type='int' required></input>
+                    <br><br>
+                    <button type="submit">删除</button>
+                </form>
+            </div>
+            <!--用户管理-->
+            <div id="user-container" class="content-section">
+                <h2>用户管理</h2>
+                <!--用户删除-->
+                <form id="usermanageDeleteForm">
+                    <h4>用户删除</h4>
+                    <label for="usermanageDeletName">用户名：</label><br>
+                    <input id="usermanageDeletName" type='text' required></input>
+                    <br><br>
+                    <button type="submit">删除</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

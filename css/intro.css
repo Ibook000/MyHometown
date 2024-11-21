@@ -1,0 +1,18 @@
+
+
+.intro-section {
+    margin-bottom: 20px;
+}
+
+.intro-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}

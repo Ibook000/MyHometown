@@ -19,6 +19,7 @@
         <ul>
             <li><a href="index.html">首页</a></li>
             <li><a href="intro.html">家乡简介</a></li>
+            <li><a href="news.html">新闻动态</a></li>
             <li><a href="scenery.html">风景名胜</a></li>
             <li><a href="food.html">美食特色</a></li>
         </ul>
@@ -29,59 +30,13 @@
             <input type="text" id="search-input" placeholder="搜索风景名称">
             <img id="search-icon" src="img/scenery/search.png" alt="Search Icon" onclick="searchScenery()">
         </div>
-              
-        <div class="scenery-grid">
-            <div class="scenery-item">
-                <img src="img/scenery/白云寺.jpg" alt="白云寺">
-                <div class="scenery-name">白云寺</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/金鸡拦河闸.jpg" alt="金鸡拦河闸">
-                <div class="scenery-name">金鸡拦河闸</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/九日山.jpg" alt="九日山">
-                <div class="scenery-name">九日山</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/林路厝.jpg" alt="林路厝">
-                <div class="scenery-name">林路厝</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/榕桥开化洞.jpg" alt="榕桥开化洞">
-                <div class="scenery-name">榕桥开化洞</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/石亭寺石刻.jpg" alt="石亭寺石刻">
-                <div class="scenery-name">石亭寺石刻</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/五里桥.png" alt="五里桥">
-                <div class="scenery-name">五里桥</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/印象明英湖.jpg" alt="印象明英湖">
-                <div class="scenery-name">印象明英湖</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/英都仕林梯田.jpg" alt="英都仕林梯田">
-                <div class="scenery-name">英都仕林梯田</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/英度报湖岩.jpg" alt="英度报湖岩">
-                <div class="scenery-name">英度报湖岩</div>
-            </div>
-            <div class="scenery-item">
-                <img src="img/scenery/云山寺.jpg" alt="云山寺">
-                <div class="scenery-name">云山寺</div>
-            </div>
-    
-        </div>
+
         <!-- 弹出式显示 -->
         <div id="modal" class="modal" onclick="closeModal()">
             <span class="close">&times;</span>
             <img class="modal-content" id="modal-image">
             <div id="caption"></div>
+            <div id="intro"></div>
         </div>
     </div>
     <div id="footer" class="footer">

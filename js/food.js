@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function searchScenery() {
     const searchInput = document.getElementById("search-input").value.trim();
-    const sceneryItems = document.querySelectorAll(".scenery");
+    const sceneryItems = document.querySelectorAll(".food");
     console.log(searchInput);
     console.log(sceneryItems);
     let found = false;
@@ -49,7 +49,7 @@ function closeModal() {
 const URL = 'http://127.0.0.1:8080/'; // 基础URL
 
 // 使用 fetch 请求获取景点数据
-fetch(URL + 'api/scenery/sceneries', { // 注意这里的API路径
+fetch(URL + 'api/food/foods', { // 注意这里的API路径
     method: 'GET',
     headers: {
         'Accept': 'application/json'
@@ -59,43 +59,43 @@ fetch(URL + 'api/scenery/sceneries', { // 注意这里的API路径
 .then(data => {
     if (data.code === 200) {
         // 获取所有景点数据
-        const sceneries = data.data;
+        const foods = data.data;
 
         // 创建容器
-        const sceneriesContainer = document.createElement('div');
-        sceneriesContainer.className = 'sceneries-container';
+        const foodContainer = document.createElement('div');
+        foodContainer.className = 'foods-container';
 
         // 遍历每个景点并创建图片、名称和介绍
-        for (const key in sceneries) {
-            if (sceneries.hasOwnProperty(key)) {
-                const scenery = sceneries[key];
-                const sceneryDiv = document.createElement('div');
-                sceneryDiv.className = 'scenery';
+        for (const key in foods) {
+            if (foods.hasOwnProperty(key)) {
+                const food = foods[key];
+                const foodDiv = document.createElement('div');
+                foodDiv.className = 'food';
 
                 // 创建图片元素
                 const img = document.createElement('img');
-                img.src = URL + scenery.image_url; // 获取图片的 URL
-                img.alt = scenery.name; // 图片的alt属性为景点名称
-                img.onclick = () => openModal(img.src, scenery.name, scenery.intro); // 点击图片时触发放大
-                sceneryDiv.appendChild(img);
+                img.src = URL + food.image_url; // 获取图片的 URL
+                img.alt = food.food_name; // 图片的alt属性为景点名称
+                img.onclick = () => openModal(img.src, food.food_name, food.food_intro); // 点击图片时触发放大
+                foodDiv.appendChild(img);
 
                 // 创建名称元素
                 const name = document.createElement('h3');
-                name.textContent = scenery.name;
-                sceneryDiv.appendChild(name);
+                name.textContent = food.food_name;
+                foodDiv.appendChild(name);
 
                 // 创建介绍元素
                 const intro = document.createElement('p');
-                intro.textContent = scenery.intro;
-                sceneryDiv.appendChild(intro);
+                intro.textContent = food.food_intro;
+                foodDiv.appendChild(intro);
 
                 // 将景点信息添加到容器中
-                sceneriesContainer.appendChild(sceneryDiv);
+                foodContainer.appendChild(foodDiv);
             }
         }
 
         // 将容器添加到页面中
-        document.querySelector("body > div.main").appendChild(sceneriesContainer);
+        document.querySelector("body > div.main").appendChild(foodContainer);
     } else {
         console.error('获取景点数据失败，错误代码:', data.code);
     }

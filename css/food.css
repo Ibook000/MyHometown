@@ -87,13 +87,13 @@
     width: 80%; /* 设置宽度 */
     padding: 10px 0; /* 增加内边距 */
 }
-.sceneries-container {
+.foods-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 创建两列，每列占据可用空间的一半 */
     gap: 16px; /* 设置列与列之间的间隔 */
 }
   
-.scenery {
+.food {
     border: 1px solid #ddd; /* 边框，可以根据需要调整 */
     padding: 10px; /* 内边距，可以根据需要调整 */
     display: flex;
@@ -105,20 +105,19 @@
     margin: 20px;
 }
 
-.scenery img {
+.food img {
     width: 100%; /* 图片最大宽度为容器宽度 */
     height: auto; /* 图片高度自动调整 */
-    max-height: fit-content;
     border-radius: 20px;
 
 }
 
-.scenery h3 {
+.food h3 {
     font-size: 34px; /* 增大标题字体大小 */
     margin: 8px 0; /* 增加标题和内容之间的间距 */
     text-align: center; /* 标题居中 */
 }
 
-.scenery p {
+.food p {
     text-align: center; /* 段落文本居中 */
 }

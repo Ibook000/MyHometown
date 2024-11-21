@@ -6,6 +6,33 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+.container{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 10%;
+    height: 64px;
+    border-radius: 10px;
+    background-color: #ffff;
+    box-shadow: #000000;
+}
+.login-container{
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    height: 32px;
+    background-color: #ffffff;
+    transform: translate(-50%, -50%); /* 使用transform来移动元素的中心点到父容器的中心点 */
+}
+.register-container{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    height: 32px;
+    background-color: #ffffff;
+    transform: translate(-50%, -50%); /* 使用transform来移动元素的中心点到父容器的中心点 */
+
+}
 
 .header {
     text-align: center;
@@ -13,7 +40,6 @@ body {
     background-color: #333;
     color: white;
 }
-
 .header img {
     max-width: 100%;
     height: auto;
@@ -53,14 +79,18 @@ body {
 }
 
 .imgs {
+    display: block;
     text-align: center;
     margin: 20px 0;
 }
 
 .imgs img {
     max-width: 100%;
-    height: auto;
+    height: 300px;
     opacity: 0.8;
+    padding: 10px;
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -69,49 +99,179 @@ body {
 }
 
 .main {
-    padding: 20px;
+    display: flex; /* 使用Flexbox布局 */
+    justify-content: flex-start; /* 子元素在主轴上的对齐方式 */
+    align-items: flex-start; /* 子元素在交叉轴上的对齐方式 */
+    padding: 50px;
     background-color: white;
     margin: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.content {
-    text-align: justify;
-    line-height: 1.6;
-    color: #333;
+.main-images-container {
+    flex: 1; /* 图片容器占据的空间 */
+    margin-right: 20px; /* 图片和文章之间的间距 */
 }
 
+.main-images-container img {
+    width: 100%; /* 图片宽度 */
+    height: auto; /* 图片高度自动 */
+    margin-bottom: 10px; /* 图片之间的间距 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* 圆角半径 */
+    
+}
+
+.intro-container,
+.news-container {
+    flex: 2; /* 文章容器占据的空间 */
+}
+
+.intro-container h2,
+.news-container h2 {
+    margin-top: 0; /* 标题上边距 */
+    margin: 20px;
+}
+
+.intro-container p,
+.news-container p {
+    text-align: justify; /* 文本两端对齐 */
+    line-height: 1.6; /* 行高 */
+    color: #333; /* 文本颜色 */
+    margin: 20px;
+}
 .footer {
     background-color: #333; /* 深灰色背景 */
     color: white; /* 文字颜色 */
-    padding: 20px; /* 内边距 */
+    padding: 20px 0; /* 上下内边距 */
     text-align: center; /* 文本居中 */
     position: relative; /* 使绝对定位的子元素相对于页脚定位 */
+    bottom: 0; /* 定位到页面底部 */
+    width: 100%; /* 页脚宽度 */
 }
+
 .footer img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* 图片最大宽度 */
+    height: auto; /* 图片高度自动 */
+    margin-bottom: 10px; /* 图片和文字之间的间距 */
 }
 
 .footer p {
-    margin: 5px 0;
+    margin: 0; /* 移除默认的外边距 */
+    font-size: 16px; /* 文本大小 */
+    color: #fff; /* 文本颜色 */
 }
-.content {
-    overflow: hidden; /* 清除浮动 */
+.comments-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 评论容器之间的间隔 */
 }
 
-.intro_img {
-    max-width: 100%;
-    float: left;
-    margin-right: 50px; /* 图片和文字之间的间距 */
+.comment-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #fff;
+    position: relative; /* 为绝对定位设置参考 */
+    display: flex;
+    flex-direction: column;
 }
 
-.intro_text {
-    font-size: large;
-    overflow: hidden; /* 确保文字不会溢出 */
-    line-height: 2; /* 设置行高 */
+.comment-role {
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold; /* 加粗角色字体 */
+    position: absolute; /* 绝对定位 */
+    top: 1%; /* 距离顶部15px */
+    left: 5%; /* 距离左侧15px */
+    padding: 2px 5px; /* 轻微的内边距 */
+    background-color: #555; /* 轻微的背景色以区分角色 */
+    border-radius: 4px; /* 轻微的边框圆角 */
 }
-.intro_text p::before {
-    content: "\00a0\00a0"; /* 添加两个空格 */
-    white-space: pre; /* 保留空格 */
+.comment-id{
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold; /* 加粗角色字体 */
+    position: absolute; /* 绝对定位 */
+    top: 15%; /* 距离顶部15px */
+    left: 5%; /* 距离左侧15px */
+    padding: 2px 5px; /* 轻微的内边距 */
+    background-color: #555; /* 轻微的背景色以区分角色 */
+    border-radius: 4px; /* 轻微的边框圆角 */
+}
+.comment-username {
+    color: #333;
+    font-size: 16px;
+    margin-top: 30%; /* 为username留出role的空间 */
+    padding-left: 5px; /* 为username留出role的空间 */
+}
+
+.comment-data {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 5px; /* 评论内容与用户名之间的间隔 */
+}
+/* 留言板样式 */
+.message-board {
+
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* 默认为隐藏，后续由JS控制显示 */
+}
+
+.message-board-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+#text-area {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 100px;
+    outline: none;
+}
+
+#text-area:focus {
+    border-color:  #38b9e9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#submit {
+    width: 100%;
+    height: 30%;
+    padding: 12px;
+    background-color:  #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* 添加悬浮时改变颜色的样式 */
+#submit:hover {
+    background-color: #025e97;
+}
+
+/* 原有的focus样式（如果需要可以保留，否则可删除） */
+#submit:focus {
+    background-color:  #01435b;
 }
